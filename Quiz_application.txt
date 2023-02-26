@@ -1,0 +1,73 @@
+package javaapplication54;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class quiz extends JFrame implements ActionListener
+{
+JFrame f;
+JLabel l1,l2,l3;
+JRadioButton b1,b2,b3,b4,b5,b6,b7,b8,b9;
+JButton b;
+Font fl=new Font(Font.SERIF,Font.BOLD,16);
+quiz()
+{
+f=new JFrame("QUIZ APPLICATION");
+l1=new JLabel("1)What is the National flower of India ?");
+b1=new JRadioButton("Rose");
+b2=new JRadioButton("Jasmine");
+b3 =new JRadioButton("Lotus");
+l2=new JLabel("2)Who is the First prime minister of India ?");
+b4= new JRadioButton("Nehru");
+b5=new JRadioButton("Modi");
+b6=new JRadioButton("Motilal");
+l3=new JLabel("3)who is the Father of Computer ?");
+b7=new JRadioButton("Galileo");
+b8=new JRadioButton("Charles Babbage");
+b9=new JRadioButton("Socrates");
+b=new JButton("click to view the total score");
+JRadioButton bg=new JRadioButton();
+bg.add(b1);
+bg.add(b2);
+bg.add(b3);
+bg.add(b4);
+bg.add(b5);
+bg.add(b6);
+bg.add(b7);
+bg.add(b8);
+bg.add(b9);
+l1.setFont(fl);
+l2.setFont(fl);
+l3.setFont(fl);
+f.add(l1);
+f.add(b1);
+f.add(b2);
+f.add(b3);
+f.add(l2);
+f.add(b4);
+f.add(b5);
+f.add(b6);
+f.add(l3);
+f.add(b7);
+f.add(b8);
+f.add(b9);
+f.setLayout(new GridLayout(13,1));
+b.addActionListener(this);
+f.add(b);
+f.setSize(500,500);
+f.setVisible(true);
+}
+public void actionPerformed(ActionEvent e){
+ int count=0;
+    if(b3.isSelected())
+        count++;
+     if(b4.isSelected())
+        count++;
+    if(b8.isSelected())
+        count++;
+    JOptionPane.showMessageDialog(f,"The score of quiz is:"+count);
+    }
+public static void main(String[] args)
+{
+new quiz();
+}
+}
